@@ -1,0 +1,30 @@
+{
+    "create": {
+        "name":"Ericton Brito",
+        "email":"ericton@yahoo.com",
+        "age": "38",
+        "weight": "96",
+        "feet_tall": "1.76" 
+    },
+    "duplicate": {
+        "name":"Apollo Brito",
+        "email":"apollon@yahoo.com",
+        "age": "16",
+        "weight": "75",
+        "feet_tall": "1.85" 
+    },
+    "remove": {
+        "name":"Falcão Delete",
+        "email":"falcao@yahoo.com",
+        "age": "18",
+        "weight": "75",
+        "feet_tall": "1.85" 
+    },
+    "required": {
+        "name":"",
+        "email":"",
+        "age": "",
+        "weight": "",
+        "feet_tall": "" 
+    }
+}
