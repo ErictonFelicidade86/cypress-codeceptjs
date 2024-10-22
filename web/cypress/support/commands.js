@@ -30,6 +30,6 @@ import StudentPage from './pages/StudentPage'
 Cypress.Commands.add('adminLogin', ()=> {
     const user = users.admin
 
-    login.doLogin(user);
-    StudentPage.navbar.userLoggedIn(user.name);
+    login.doLogin(user)
+    StudentPage.navbar.userLoggedIn(user.name)
 })

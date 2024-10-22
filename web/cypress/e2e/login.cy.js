@@ -1,18 +1,17 @@
 import users from '../fixtures/users.json'
-import login from '../support/pages/LoginPage';
-import studentPage from '../support/pages/StudentPage';
+import login from '../support/pages/LoginPage' 
+import studentPage from '../support/pages/StudentPage' 
 
 describe('login', () => {
 
     it('Deve logar com o perfil do admin', ()=> {
        
-        const user = users.admin;
+        const user = users.admin 
         
-        login.doLogin(user);
+        login.doLogin(user) 
 
-        studentPage.navbar.userLoggedIn(user.name);
-   
-    });
+        studentPage.navbar.userLoggedIn(user.name) 
+    }) 
 
     it('Não deve logar com senha incorreta', ()=> {
 
@@ -34,16 +33,15 @@ describe('login', () => {
 
         const emails = users.inv_emails
 
-        login.go();
+        login.go() 
 
         emails.forEach(el => {
-            login.fill(el);
-            login.submit();
-            login.popUpHave('Insira um email válido.');
-            login.popUpBack();
-        });
-
-    });
+            login.fill(el) 
+            login.submit() 
+            login.popUpHave('Insira um email válido.') 
+            login.popUpBack() 
+        }) 
+    }) 
 
     it('Não deve logar com email em branco', ()=> {
 
@@ -51,7 +49,7 @@ describe('login', () => {
 
         login.doLogin(user)
         login.popUpHave('Os campos email e senha são obrigatórios.')
-    });
+    }) 
 
     it('Não deve logar com password em branco', ()=> {
 
@@ -59,7 +57,7 @@ describe('login', () => {
 
         login.doLogin(user)
         login.popUpHave('Os campos email e senha são obrigatórios.')
-    });
+    }) 
 
     it('Não deve logar com email e password em branco', ()=> {
 
@@ -67,5 +65,5 @@ describe('login', () => {
 
         login.doLogin(user)
         login.popUpHave('Os campos email e senha são obrigatórios.')
-    });
-});
+    }) 
+}) 
