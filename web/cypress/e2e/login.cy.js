@@ -33,14 +33,26 @@ describe('login', () => {
 
         const emails = users.inv_emails
 
+        let outputMessages = []
+        let expectedMessages = []
+
         login.go() 
 
         emails.forEach(el => {
             login.fill(el) 
             login.submit() 
-            login.popUpHave('Insira um email válido.') 
+            
+            login.popUp()
+                .invoke('text')
+                .then((t)=> {
+                    cy.log(t)
+                    outputMessages.push(t)
+                    expectedMessages.push('Insira um email válido.')
+            })
+
             login.popUpBack() 
-        }) 
+        })
+        cy.wrap(outputMessages).should('deep.equal', expectedMessages) 
     }) 
 
     it('Não deve logar com email em branco', ()=> {

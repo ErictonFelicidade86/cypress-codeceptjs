@@ -5,6 +5,7 @@ class LoginPage {
     fill(user) {
         if( (user.email) && (user.password) ){
             cy.get('#email').clear().type(user.email)
+            cy.log(user.email)
             cy.get('#password').clear().type(user.password)
         }   
     }
@@ -17,9 +18,15 @@ class LoginPage {
         this.fill(user)
         this.submit()
     }
+
+    popUp(){
+        return cy.get('#swal2-content')
+    }
     
     popUpHave(text){
-        cy.get('#swal2-content').should('be.visible').should('have.text', text)
+        this.popUp()
+            .should('be.visible')
+            .should('have.text', text)
     }
 
     popUpBack(){
